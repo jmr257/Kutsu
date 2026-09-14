@@ -3,56 +3,159 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
 <title>PAYBACK — 3 × 40</title>
+<meta name="description" content="Kolme opiskelukaveria täyttää 40. Nyt on aika maksaa vanhat velat takaisin.">
 <style>
-:root{--bg:#0d0d0f;--panel:#151518;--text:#f5f1e8;--muted:#aaa6a0;--line:#2a2a2f;--accent:#d6b36a}
-*{box-sizing:border-box} html{scroll-behavior:smooth}
-body{margin:0;background:radial-gradient(circle at 80% 10%,rgba(214,179,106,.08),transparent 28rem),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-.wrap{width:min(1100px,calc(100% - 32px));margin:auto}
-.hero{padding:110px 0 60px}
-.eyebrow{text-transform:uppercase;letter-spacing:.24em;color:var(--accent);font-size:.78rem;margin-bottom:18px}
-h1{font-size:clamp(4rem,12vw,9rem);line-height:.85;letter-spacing:-.06em;margin:0;font-weight:900}
-h1 span{display:block;color:var(--accent)}
-.lede{max-width:720px;color:#d5d1ca;font-size:1.2rem;margin:30px 0}
-.meta{display:flex;gap:10px;flex-wrap:wrap}
-.pill{border:1px solid var(--line);padding:10px 14px;border-radius:999px;color:#d7d3cb}
-section{padding:60px 0}
-h2{font-size:clamp(2.2rem,5vw,4.5rem);line-height:.95;letter-spacing:-.04em;margin:0 0 18px}
-.copy{color:var(--muted);max-width:760px}
-.form-shell{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+:root{
+  --bg:#0b0b0d; --panel:#151518; --text:#f7f3ea; --muted:#aaa7a0;
+  --line:#2a2a30; --gold:#d7b36a; --gold2:#f1d89e; --max:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 82% 9%, rgba(215,179,106,.13), transparent 24rem),
+    radial-gradient(circle at 12% 55%, rgba(215,179,106,.06), transparent 28rem),
+    var(--bg);
+  line-height:1.55;
+}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+nav{
+  position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(255,255,255,.06);
+  background:rgba(11,11,13,.82);backdrop-filter:blur(14px)
+}
+nav .row{height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:.18em;font-size:.9rem}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem}
+.hero{padding:90px 0 80px;min-height:82vh;display:flex;align-items:center}
+.eyebrow{font-size:.74rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:20px}
+h1{font-size:clamp(4.2rem,12vw,9.5rem);line-height:.8;letter-spacing:-.07em;margin:0;font-weight:950}
+h1 span{display:block;color:var(--gold)}
+.greeting{font-size:clamp(1.4rem,3vw,2.25rem);font-weight:750;margin:34px 0 8px;letter-spacing:-.03em}
+.lede{max-width:760px;color:#d6d2ca;font-size:clamp(1.05rem,2vw,1.3rem);margin:0 0 30px}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 34px}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:999px;padding:10px 14px;color:#ddd8d0;font-size:.92rem}
+.cta{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:999px;background:var(--gold);color:#111;text-decoration:none;font-weight:900;transition:.2s}
+.cta:hover{transform:translateY(-2px);filter:brightness(1.04)}
+section{padding:80px 0}
+.section-title{font-size:clamp(2.3rem,5vw,4.8rem);line-height:.96;letter-spacing:-.045em;margin:0 0 18px}
+.copy{max-width:760px;color:var(--muted);font-size:1.07rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:34px}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));border-radius:20px;padding:24px;min-height:165px}
+.card strong{display:block;color:var(--gold);font-size:.78rem;letter-spacing:.12em;margin-bottom:28px}
+.card h3{margin:0 0 10px;font-size:1.05rem}
+.card p{margin:0;color:var(--muted)}
+.rsvp-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:end;margin-bottom:28px}
+.notice{border-left:3px solid var(--gold);padding:10px 0 10px 18px;color:#d7d3cc}
+.form-shell{background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
 iframe{display:block;width:100%;height:1500px;border:0;background:#fff}
-footer{border-top:1px solid var(--line);padding:28px 0 44px;color:var(--muted);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:30px 0 48px;color:var(--muted);font-size:.88rem}
+.small{font-size:.82rem;color:#77736e;margin-top:14px}
+@media(max-width:760px){
+  .hero{min-height:auto;padding-top:72px}
+  .grid,.rsvp-head{grid-template-columns:1fr}
+  h1{font-size:clamp(4rem,20vw,7rem)}
+  iframe{height:1750px}
+}
 </style>
 </head>
 <body>
+<nav><div class="wrap row"><div class="brand">PAYBACK</div><a href="#rsvp">Ilmoittaudu →</a></div></nav>
+
 <main>
 <section class="hero">
   <div class="wrap">
     <div class="eyebrow">3 × 40 vuotta · yksi ilta</div>
     <h1>PAY<span>BACK</span></h1>
+    <div id="greeting" class="greeting">Tervetuloa juhliin.</div>
     <p class="lede">Kolme opiskelukaveria täyttää 40. Nyt on aika maksaa vanhat velat takaisin.</p>
     <div class="meta">
-      <div class="pill">📅 1.–2.7.2027</div>
-      <div class="pill">📍 Hirvihaaran kartano</div>
-      <div class="pill">🥂 Illallinen + bileet</div>
+      <div class="pill">1.–2.7.2027</div>
+      <div class="pill">Hirvihaaran kartano</div>
+      <div class="pill">Illallinen · bileet · majoitus</div>
+    </div>
+    <a class="cta" href="#rsvp">ILMOITTAUDU 11.10. MENNESSÄ</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Ilta</div>
+    <h2 class="section-title">120 vuotta.<br>Yksi kunnollinen syy juhlia.</h2>
+    <p class="copy">Kokoonnutaan yhteen hyvän ruoan, vanhojen tarinoiden ja riittävän pitkän illan merkeissä. Tarkemmat aikataulut ja käytännöt täsmentyvät lähempänä juhlia.</p>
+    <div class="grid">
+      <div class="card"><strong>01</strong><h3>Saapuminen</h3><p>Tervetuloa kartanolle, alkujuoma ja aikaa nähdä porukkaa.</p></div>
+      <div class="card"><strong>02</strong><h3>Illallinen</h3><p>Kolmen ruokalajin illallinen, puheita ja muisteloita sopivassa suhteessa.</p></div>
+      <div class="card"><strong>03</strong><h3>Payback</h3><p>Illallisen jälkeen jatketaan bileillä. Lopetusajasta ei tehdä turhan tarkkaa lupausta.</p></div>
     </div>
   </div>
 </section>
 
 <section id="rsvp">
   <div class="wrap">
-    <div class="eyebrow">RSVP</div>
-    <h2>Oletko mukana?</h2>
-    <p class="copy">Ilmoittaudu suoraan alla. Lomake on upotettu Google Formsista, joten vastaukset menevät samaan Google Forms / Sheets -listaan kuin normaalistikin.</p>
+    <div class="rsvp-head">
+      <div>
+        <div class="eyebrow">RSVP · 11.10.2026 mennessä</div>
+        <h2 class="section-title">Oletko mukana?</h2>
+      </div>
+      <div class="notice">
+        Ilmoittautumisen yhteydessä kysytään myös majoitustarve sekä erityisruokavaliot.
+      </div>
+    </div>
+
+    <div id="inviteeLine" class="copy" style="margin-bottom:22px;display:none"></div>
+
     <div class="form-shell">
-      <iframe
+      <iframe id="rsvpFrame"
         src="https://docs.google.com/forms/d/e/1FAIpQLSdzrKKst0Sx3RPDVyrKGodKxFXi0NGuDEF3IN2-GuDoY0tHsw/viewform?embedded=true"
         title="PAYBACK RSVP"
         loading="lazy">Ladataan…</iframe>
     </div>
+    <div class="small">Vastaukset tallentuvat Google Formsiin. Henkilökohtainen kutsulinkki ei sisällä keskitettyä julkista vieraslistaa.</div>
   </div>
 </section>
 </main>
-<footer><div class="wrap">PAYBACK · 3 × 40</div></footer>
+
+<footer><div class="wrap">PAYBACK · 3 × 40 · Hirvihaaran kartano</div></footer>
+
+<script>
+/*
+  FORM-NIMEN ESITÄYTTÖ:
+  Kun saat Google Formsista yhden "Hanki esitäytetty linkki" -URL:n, etsi siitä
+  nimen kentän parametri (muoto entry.123456789=...). Laita pelkkä numero tähän.
+  Esim. const FORM_NAME_ENTRY_ID = "123456789";
+*/
+const FORM_NAME_ENTRY_ID = "";
+
+function decodeBase64Url(value){
+  try{
+    let s = value.replace(/-/g, "+").replace(/_/g, "/");
+    s += "=".repeat((4 - s.length % 4) % 4);
+    const bytes = Uint8Array.from(atob(s), c => c.charCodeAt(0));
+    return new TextDecoder().decode(bytes);
+  }catch(e){ return ""; }
+}
+
+const params = new URLSearchParams(location.hash.startsWith("#") ? location.hash.slice(1) : location.hash);
+const fullName = decodeBase64Url(params.get("g") || "");
+
+if(fullName){
+  const firstName = fullName.split(/\s+/)[0];
+  document.getElementById("greeting").textContent = "Tervetuloa, " + firstName + ".";
+  const invitee = document.getElementById("inviteeLine");
+  invitee.style.display = "block";
+  invitee.textContent = "Tämä kutsu on osoitettu henkilölle: " + fullName + ".";
+
+  if(FORM_NAME_ENTRY_ID){
+    const frame = document.getElementById("rsvpFrame");
+    const u = new URL(frame.src);
+    u.searchParams.set("entry." + FORM_NAME_ENTRY_ID, fullName);
+    frame.src = u.toString();
+  }
+}
+</script>
 </body>
 </html>
